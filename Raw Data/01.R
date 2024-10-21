@@ -47,4 +47,16 @@ gg_miss_var(AMR_KAP_Data)
 
 # check duplicated rows 
 sum(duplicated(AMR_KAP_Data))
+# Load necessary libraries
+library(ggplot2)
+library(dplyr)
+
+# Example data: Replace 'Category' with an actual column name from your dataset
+# Group by the categorical variable and summarize counts
+AMR_KAP_Data %>%
+  count(Category) %>%
+  ggplot(aes(x = Category, y = n, fill = Category)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Bar Chart of Category", x = "Category", y = "Count") +
+  theme_minimal()
 
