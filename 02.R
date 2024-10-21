@@ -1,4 +1,3 @@
-
 # Install the necessary package
 install.packages("tidyverse")
 install.packages("naniar")
@@ -36,15 +35,18 @@ library(forecast)
 library(dplyr)
 
 library(readxl)
-AMR_KAP_Data <- read_excel("Raw Data/AMR_KAP_Data.xlsx")
-View(AMR_KAP_Data)
-print(AMR_KAP_Data)
+
+library(readxl)
+Coded <- read_excel("Preprocess/Coded.xlsx")
+View(Coded)
+
+print(Coded)
 
 # check missing data 
-sum(is.na(AMR_KAP_Data))
-miss_var_summary(AMR_KAP_Data)
-gg_miss_var(AMR_KAP_Data)
+sum(is.na(Coded))
+miss_var_summary(Coded)
+gg_miss_var(Coded)
 
 # check duplicated rows 
-sum(duplicated(AMR_KAP_Data))
+sum(duplicated(Coded))
 
